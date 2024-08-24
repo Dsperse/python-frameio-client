@@ -45,12 +45,20 @@ class HTTPClient(object):
         self.shared_headers = {"x-frameio-client": f"python/{self.client_version}"}
 
         # Configure retry strategy (very broad right now)
-        self.retry_strategy = Retry(
-            total=100,
-            backoff_factor=2,
-            status_forcelist=retryable_statuses,
-            method_whitelist=["GET", "POST", "PUT", "GET", "DELETE"],
-        )
+        try:
+            self.retry_strategy = Retry(
+                total=100,
+                backoff_factor=2,
+                status_forcelist=retryable_statuses,
+                allowed_methods=["GET", "POST", "PUT", "GET", "DELETE"],
+            )
+        except TypeError:
+            self.retry_strategy = Retry(
+                total=100,
+                backoff_factor=2,
+                status_forcelist=retryable_statuses,
+                method_whitelist=["GET", "POST", "PUT", "GET", "DELETE"],
+            )
 
         # Create real thread
         self._initialize_thread()
@@ -126,7 +134,7 @@ class APIClient(HTTPClient, object):
 
         if r.status_code == 422 and "presentation" in endpoint:
             raise PresentationException
-        
+
         if r.status_code == 500 and 'audit' in endpoint:
             print(f"Hit a 500 on page: {r.headers.get('page-number')}, url: {r.url}")
             return []
