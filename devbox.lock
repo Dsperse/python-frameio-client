@@ -1,6 +1,10 @@
 {
   "lockfile_version": "1",
   "packages": {
+    "pipenv": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#pipenv",
+      "source": "nixpkg"
+    },
     "poetry@latest": {
       "last_modified": "2024-08-14T11:41:26Z",
       "plugin_version": "0.0.4",
@@ -63,6 +67,90 @@
             }
           ],
           "store_path": "/nix/store/3gx85p4wkv2h2jmzxqvsz07vmqn0vjji-python3.12-poetry-1.8.3"
+        }
+      }
+    },
+    "python312Packages.docutils": {
+      "resolved": "github:NixOS/nixpkgs/75a52265bda7fd25e06e3a67dee3f0354e73243c#python312Packages.docutils",
+      "source": "nixpkg"
+    },
+    "python312Packages.pytest@latest": {
+      "last_modified": "2024-08-21T02:49:08Z",
+      "resolved": "github:NixOS/nixpkgs/4c30668e1edb7348169407f218fa7c71a94b17f3#python312Packages.pytest",
+      "source": "devbox-search",
+      "version": "8.3.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5gc5g4kf23m8qy92i99naw07b2arhyaq-python3.12-pytest-8.3.2",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/n4gbwn3qn616gwzza7zpc6izbzk9bdpw-python3.12-pytest-8.3.2-dist"
+            },
+            {
+              "name": "testout",
+              "path": "/nix/store/0j03j55jmiv515f7m2ydpni4p27jzpib-python3.12-pytest-8.3.2-testout"
+            }
+          ],
+          "store_path": "/nix/store/5gc5g4kf23m8qy92i99naw07b2arhyaq-python3.12-pytest-8.3.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/fh7q40xw2ljpkz8q0q8ca9g8kdxpsqig-python3.12-pytest-8.3.2",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/i83kx4s9011qd33fhwb8x9fhcz5bi9wr-python3.12-pytest-8.3.2-dist"
+            },
+            {
+              "name": "testout",
+              "path": "/nix/store/28d788p8qb8jbfili7dksyvk7vj98242-python3.12-pytest-8.3.2-testout"
+            }
+          ],
+          "store_path": "/nix/store/fh7q40xw2ljpkz8q0q8ca9g8kdxpsqig-python3.12-pytest-8.3.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hc3yj237m9qvdgfd35xr2aii2dzx3q6r-python3.12-pytest-8.3.2",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/v0yxgahk1qz6xfna8kfznhfdg8iy2zrr-python3.12-pytest-8.3.2-dist"
+            },
+            {
+              "name": "testout",
+              "path": "/nix/store/ihsd3ji1pvrgf82w7aca9hgjwzc1iwap-python3.12-pytest-8.3.2-testout"
+            }
+          ],
+          "store_path": "/nix/store/hc3yj237m9qvdgfd35xr2aii2dzx3q6r-python3.12-pytest-8.3.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/y6pqi2hlgzwkxzzzppx8750hcm01vcpi-python3.12-pytest-8.3.2",
+              "default": true
+            },
+            {
+              "name": "testout",
+              "path": "/nix/store/mngirwr79jn40sbd5nd25n502j2rkv46-python3.12-pytest-8.3.2-testout"
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/rgrbq1g9l1c1ndpmb3fkaygfrab72cy7-python3.12-pytest-8.3.2-dist"
+            }
+          ],
+          "store_path": "/nix/store/y6pqi2hlgzwkxzzzppx8750hcm01vcpi-python3.12-pytest-8.3.2"
         }
       }
     },

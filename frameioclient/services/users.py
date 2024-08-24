@@ -15,3 +15,9 @@ class User(Service):
         Get a list of accounts the user has access to
         """
         return self.client._api_call("get", "/accounts")
+
+    def get_shared_projects(self):
+        """
+        Get a list of projects the user has been added as a collaborator to
+        """
+        return self.client._api_call("get", "/projects/shared")
