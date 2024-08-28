@@ -65,15 +65,15 @@ class Asset(Service):
         """
         endpoint = "/assets/{}/children".format(asset_id)
 
+        query_params = ""
+
+        if len(includes) > 0:
+            query_params += "?include={}".format(includes.join(","))
+        else:
+            # Always include children if not specified
+            query_params += "?" + "include=children"
+
         if slim == True:
-            query_params = ""
-
-            if len(includes) > 0:
-                query_params += "?include={}".format(includes.join(","))
-            else:
-                # Always include children
-                query_params += "?" + "include=children"
-
             # Only fields
             query_params += (
                 "&" + "only_fields=" + ",".join(constants.asset_excludes["only_fields"])
@@ -99,9 +99,9 @@ class Asset(Service):
             # # Sort by inserted_at
             # query_params += '&' + 'sort=-inserted_at'
 
-            endpoint += query_params
+        endpoint += query_params
 
-            # print("Final URL", endpoint)
+        # print("Final URL", endpoint)
 
         return self.client._api_call("get", endpoint, kwargs)
 
